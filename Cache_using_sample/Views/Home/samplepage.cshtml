@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>samplepage</title>
+</head>
+<body>
+    <div>
+        @if (HttpContext.Current.Cache["name"] != null)
+        {
+            var name = HttpContext.Current.Cache["name"].ToString();
+            <span>@name</span><br />
+        }
+        else
+        {
+            <span>There is not any "name" item.</span><br />
+        }
+        @if (HttpContext.Current.Cache["surname"] != null)
+        {
+            var surname = HttpContext.Current.Cache["surname"].ToString();
+            <span>@surname</span><br />
+        }
+        else
+        {
+            <span>There is not any "surname" item.</span><br />
+        }
+        @if (HttpContext.Current.Cache["age"] != null)
+        {
+            var age = HttpContext.Current.Cache["age"].ToString();
+            <span>@age</span><br />
+        }
+        else
+        {
+            <span>There is not any "age" item.</span><br />
+        }
+    </div>
+</body>
+</html>
